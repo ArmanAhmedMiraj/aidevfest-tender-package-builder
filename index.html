@@ -4,10 +4,58 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tender Document Package Builder</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<h1>Tender Document Package Builder</h1>
-<p>Placeholder page. The app is being built.</p>
-<p><a href="tests.html">Run the logic tests</a></p>
+<header class="top">
+  <div>
+    <h1 data-i18n="app_title">Tender Document Package Builder</h1>
+    <p class="sub" data-i18n="app_sub"></p>
+  </div>
+  <div class="lang" role="group" aria-label="Language / &#2477;&#2494;&#2487;&#2494;">
+    <button type="button" id="lang-en" aria-pressed="true">English</button>
+    <button type="button" id="lang-bn" aria-pressed="false">&#2476;&#2494;&#2434;&#2482;&#2494;</button>
+  </div>
+</header>
+
+<main>
+  <div id="messages" aria-live="polite"></div>
+
+  <section class="card">
+    <h2 data-i18n="step1"></h2>
+    <p class="hint" data-i18n="step1_hint"></p>
+    <input type="file" id="json-input" hidden>
+    <button type="button" id="btn-json" class="btn primary" data-i18n="btn_choose_json"></button>
+    <dl id="tender-details" class="details"></dl>
+  </section>
+
+  <section class="card">
+    <h2 data-i18n="step2"></h2>
+    <p class="hint" data-i18n="step2_hint"></p>
+    <input type="file" id="pdf-input" multiple hidden>
+    <div id="dropzone" class="dropzone">
+      <button type="button" id="btn-pdfs" class="btn primary" data-i18n="btn_choose_pdfs"></button>
+      <span class="drop-text" data-i18n="drop_here"></span>
+    </div>
+    <ul id="file-list" class="files"></ul>
+  </section>
+
+  <section class="card">
+    <h2 data-i18n="step3"></h2>
+    <p class="hint" data-i18n="step3_hint"></p>
+    <div id="req-wrap" class="req-wrap"></div>
+  </section>
+
+  <section class="card">
+    <h2 data-i18n="step4"></h2>
+    <div id="gen-reasons"></div>
+    <button type="button" id="btn-generate" class="btn primary big" disabled data-i18n="btn_generate"></button>
+  </section>
+</main>
+
+<script src="libs/pdf-lib.min.js"></script>
+<script src="js/logic.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>
