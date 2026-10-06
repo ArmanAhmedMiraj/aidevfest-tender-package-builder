@@ -286,7 +286,7 @@
     window.addEventListener('dragover', function (e) { e.preventDefault(); });
     window.addEventListener('drop', function (e) { e.preventDefault(); });
     $('btn-generate').addEventListener('click', function () {
-      if (window.PackageBuilder && window.PackageBuilder.generate) window.PackageBuilder.generate(state, t);
+      if (window.PackageBuilder && window.PackageBuilder.generate) window.PackageBuilder.generate(state, { addMessage: addMessage, refresh: renderGenerate });
       else addMessage('info', 'info_gen_pending');
     });
     window.AppState = state;        /* read by the package builder and by automated checks */
