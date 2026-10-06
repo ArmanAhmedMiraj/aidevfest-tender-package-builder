@@ -3,6 +3,7 @@
   'use strict';
   var S = root.I18n && root.I18n.S;
   if (!S) return;
+  S.en.blocked_title = 'The package cannot be made yet. Please Upload these:';
   Object.assign(S.bn, {
       blocked_title: '\u09aa\u09cd\u09af\u09be\u0995\u09c7\u099c \u098f\u0996\u09a8\u0987 \u09ac\u09be\u09a8\u09be\u09a8\u09cb \u09af\u09be\u09ac\u09c7 \u09a8\u09be\u0964 \u0986\u0997\u09c7 \u098f\u0997\u09c1\u09b2\u09cb Upload \u0995\u09b0\u09c1\u09a8:',
       nav_1: '\u09aa\u09cd\u09b0\u09af\u09bc\u09cb\u099c\u09a8\u09c0\u09af\u09bc \u09a1\u0995\u09c1\u09ae\u09c7\u09a8\u09cd\u099f',
