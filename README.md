@@ -64,3 +64,12 @@ This project was built with AI assistance (Claude). Each commit message records 
 ## Licence
 
 MIT - see `LICENSE`. pdf-lib is MIT licensed.
+## Interface (latest)
+
+- Layout: setup on the left (requirements, PDF files), matching table on the right, package bar at the bottom, with a step bar (Requirements, PDF files, Match, Package) to jump between sections.
+- Display modes: **Default** (3D-style buttons) and **Dark 3D**. The choice is remembered. Files: `css/theme.css`, `css/dark.css`, `js/theme.js`.
+- Matched requirements show a green "Done" badge and a green row; problems stay red, amber or grey.
+- Preview: each PDF has **Floating preview** (a window inside the page with a close button, Esc to close) and **Preview in new tab**. Files: `js/preview.js`, `css/preview.css`.
+- Bangla wording was rewritten to read naturally: `js/polish.js`, `js/bn-more.js`.
+- A small CSS-only 3D document-stack logo with a subtle animation (off when the browser asks for reduced motion): `css/logo.css`.
+- Not tested: a real GPU or other browsers than Chrome.
