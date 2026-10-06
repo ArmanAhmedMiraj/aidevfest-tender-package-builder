@@ -1,0 +1,20 @@
+/* logo.css - small 3D document-stack logo (pure CSS, no images, no library) */
+.brand { display: grid; grid-template-columns: auto 1fr; column-gap: 18px; align-items: center; }
+.brand .logo3d { grid-row: 1 / span 2; }
+.brand h1 { align-self: end; } .brand .sub { align-self: start; }
+.logo3d { position: relative; width: 84px; height: 76px; perspective: 520px; flex: none; }
+.logo3d .stack { position: absolute; left: 50%; top: 52%; width: 0; height: 0; transform-style: preserve-3d; transform: rotateX(56deg) rotateZ(-32deg); animation: lg-sway 7s ease-in-out infinite; }
+.logo3d .sh { position: absolute; left: -22px; top: -28px; width: 44px; height: 56px; border-radius: 5px; transform-style: preserve-3d; }
+.logo3d .s1 { background: linear-gradient(135deg, #5f93e8, #2c5db8); transform: translateZ(0); box-shadow: 3px 4px 0 #1b3f86, 10px 14px 16px rgba(0,0,0,.45); }
+.logo3d .s2 { background: linear-gradient(135deg, #a9c9ff, #6fa2f0); transform: translateZ(8px); box-shadow: 2px 3px 0 #3d6fc4; }
+.logo3d .s3 { background: linear-gradient(135deg, #ffffff, #dce9ff); transform: translateZ(16px); box-shadow: 2px 3px 0 #8fb0e6; animation: lg-float 4.8s ease-in-out infinite; }
+.logo3d .s3::before { content: ""; position: absolute; left: 7px; right: 7px; top: 10px; height: 20px; background: repeating-linear-gradient(#9db8e0 0 2px, transparent 2px 6px); border-radius: 1px; }
+.logo3d .s3::after { content: ""; position: absolute; left: 7px; right: 18px; bottom: 8px; height: 2px; background: #9db8e0; }
+.logo3d .tick { position: absolute; right: -9px; bottom: -9px; width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(#35d070, #14803a); color: #fff; font: 700 15px/1 Arial, sans-serif; transform: translateZ(26px); box-shadow: 0 2px 0 #0b4a22, 3px 5px 8px rgba(0,0,0,.5); animation: lg-pop 4.8s ease-in-out infinite; }
+.logo3d .fly { background: linear-gradient(135deg, #ffffff, #cfe0ff); transform: translateZ(16px); opacity: 0; animation: lg-fly 6s ease-in-out infinite; box-shadow: 2px 3px 0 #8fb0e6; }
+@keyframes lg-sway { 0%, 100% { transform: rotateX(56deg) rotateZ(-32deg); } 50% { transform: rotateX(56deg) rotateZ(-22deg); } }
+@keyframes lg-float { 0%, 100% { transform: translateZ(16px); } 50% { transform: translateZ(23px); } }
+@keyframes lg-pop { 0%, 100% { transform: translateZ(26px) scale(1); } 50% { transform: translateZ(34px) scale(1.08); } }
+@keyframes lg-fly { 0% { opacity: 0; transform: translate3d(46px, -38px, 60px) rotateZ(14deg) scale(.8); } 18% { opacity: .95; } 42% { opacity: .95; transform: translate3d(0, 0, 30px) rotateZ(0deg) scale(1); } 52%, 100% { opacity: 0; transform: translate3d(0, 0, 18px) scale(1); } }
+@media (prefers-reduced-motion: reduce) { .logo3d .stack, .logo3d .s3, .logo3d .tick, .logo3d .fly { animation: none; } .logo3d .fly { display: none; } }
+@media (max-width: 640px) { .logo3d { width: 62px; height: 58px; transform: scale(.78); transform-origin: left center; } .brand { column-gap: 8px; } }
