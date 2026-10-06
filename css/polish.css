@@ -1,0 +1,11 @@
+/* polish.css - use the full screen width; make completed requirements clearly "done" */
+main { max-width: none; padding: 24px clamp(16px, 3vw, 56px) 48px; gap: 24px; grid-template-columns: minmax(340px, 30%) minmax(0, 1fr); }
+.top { padding-left: clamp(16px, 3vw, 56px); padding-right: clamp(16px, 3vw, 56px); }
+.card { padding: 22px 26px; }
+.req-table th, .req-table td { padding: 13px 10px; }
+.req-table { min-width: 0; }
+.st-ok { background: #146c2e; color: #fff; box-shadow: 0 2px 0 #0d4f20; }
+.req-table tbody tr:has(.st-ok) { background: #f1faf4; box-shadow: inset 4px 0 0 #146c2e; }
+:root[data-theme="contrast"] .st-ok { background: #4dff88; color: #000; border-color: #4dff88; box-shadow: none; }
+:root[data-theme="contrast"] .req-table tbody tr:has(.st-ok) { background: #000; box-shadow: inset 6px 0 0 #4dff88; }
+@media (max-width: 980px) { main { grid-template-columns: minmax(0, 1fr); } }
