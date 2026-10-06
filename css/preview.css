@@ -1,0 +1,24 @@
+/* preview.css - floating preview window (3D look) */
+.pv-back { position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; padding: 16px; background: rgba(8, 20, 44, .58); perspective: 1400px; }
+.pv-back[hidden] { display: none; }
+.pv-win { width: min(980px, 96vw); height: min(88vh, 860px); display: flex; flex-direction: column; background: #fff; border: 1px solid #9fb0c8; border-radius: 14px; overflow: hidden; transform-origin: 50% 0; box-shadow: 0 3px 0 #8fa3bf, 0 10px 0 -2px rgba(16,30,54,.25), 0 34px 70px rgba(5, 15, 35, .55); animation: pv-in .22s ease-out; }
+@keyframes pv-in { from { opacity: 0; transform: rotateX(14deg) translateY(22px) scale(.96); } to { opacity: 1; transform: none; } }
+.pv-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 14px; background: linear-gradient(#17407f, #0a2147); color: #fff; box-shadow: 0 3px 8px rgba(5,15,35,.35); position: relative; z-index: 1; }
+.pv-title { margin: 0; font-size: 16px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pv-close { flex: none; width: 38px; height: 38px; border-radius: 50%; border: 1px solid #7c0f18; border-bottom-width: 3px; background: linear-gradient(#ff6b73, #c4202c); color: #fff; font-size: 26px; line-height: 1; cursor: pointer; box-shadow: 0 3px 0 #7c0f18, 0 6px 10px rgba(0,0,0,.35); font-family: Arial, sans-serif; }
+.pv-close:active { transform: translateY(3px); box-shadow: 0 0 0 #7c0f18; }
+.pv-close:focus-visible, .pv-tab:focus-visible { outline: 3px solid #ffb300; outline-offset: 2px; }
+.pv-frame { flex: 1; width: 100%; border: 0; background: #e9eef6; box-shadow: inset 0 4px 8px rgba(16,30,54,.15); }
+.pv-foot { padding: 8px 14px; background: linear-gradient(#f4f7fb, #e3eaf4); border-top: 1px solid #c3cfe0; text-align: right; }
+.pv-tab { color: #0b5fcc; font-weight: 600; }
+.file-actions { flex-wrap: wrap; }
+@media (prefers-reduced-motion: reduce) { .pv-win { animation: none; } }
+:root[data-theme="contrast"] .pv-back { background: rgba(0,0,0,.85); }
+:root[data-theme="contrast"] .pv-win { background: #000; border: 3px solid #fff; box-shadow: none; }
+:root[data-theme="contrast"] .pv-bar { background: #000; border-bottom: 3px solid #fff; box-shadow: none; }
+:root[data-theme="contrast"] .pv-close { background: #ffe600; color: #000; border: 2px solid #fff; box-shadow: none; }
+:root[data-theme="contrast"] .pv-foot { background: #000; border-top: 3px solid #fff; }
+:root[data-theme="contrast"] .pv-tab { color: #ffe600; }
+:root[data-theme="contrast"] .pv-frame { background: #222; box-shadow: none; }
+/* three buttons per file need their own row inside the narrow left column */
+.file { grid-template-columns: 1fr; } .file-actions { grid-column: 1; grid-row: auto; flex-wrap: wrap; }
