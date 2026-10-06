@@ -1,0 +1,4 @@
+sample-pack/
+documents/
+*.zip
+.vscode/
